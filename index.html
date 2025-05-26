@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <section class="welcome-screen" id="welcome-screen">
+        <div class="welcome-split">
+            <div class="welcome-black">
+                <h1 class="welcome-title welcome-title-black">Welcome to</h1>
+            </div>
+            <div class="welcome-white">
+                <h1 class="welcome-title welcome-title-white">Quantum Chat</h1>
+            </div>
+        </div>
+        <div class="welcome-content">
+            <button class="welcome-button" onclick="enterChat()">Enter the Quantum</button>
+        </div>
+    </section>
+    <div class="container" id="chat-container" style="display: none;">
+        <header>
+            <h1 class="title">QUANTUM CHAT</h1>
+            <p class="subtitle">Rethinking Human-Computer Interaction</p>
+        </header>
+        <section class="chat-box" id="chat-box">
+            <div class="chat-content">
+                <div class="chat-welcome">
+                    <p class="message-bubble message-system">Ask me anything</p>
+                </div>
+            </div>
+        </section>
+        <section class="input-section">
+            <input type="text" id="user-input" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='welcome.js') }}"></script>
+</body>
+</html>
